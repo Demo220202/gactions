@@ -1,0 +1,29 @@
+name: Hello
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Greet
+        run: echo "Hello buddies!"
+        shell: bash
+
+  bye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bye
+        run: echo "Good Bye!"
+        shell: bash
+      
+    
